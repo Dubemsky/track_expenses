@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Table</title>
+    <style>
+        
+    
+    </style>
+</head>
+<body>
+    <div class="logout_button">
+        <button>Logout</button>
+    </div>
+
+
+    <h1>Welcome {{ name }}</h1>
+    <div class="container">
+        <div class="title">
+            <button class="button" id="add_button">Add to Table</button>
+            <button class="button" id="view_button">View Table</button>
+        </div>
+        <div id="form_container" style="display: none;">
+            <div class="form-wrapper">
+                <form id="add_form" action="/home" method="post">
+                    <label for="item_name">Item Name:</label>
+                    <input type="text" id="item_name" name="item_name" required><br>
+                    <label for="price">Price (€):</label>
+                    <input type="number" id="price" name="price" required><br>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required><br>
+                    <input type="submit" value="Add Item">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="new-page" id="new_page" style="display: none;">
+        <h2>Your table</h2>
+        <h3> Total spent: {{ total_spent }} €</h3>
+        <table id="item_table" class="styled-table">
+            <thead>
+                <tr>
+                    <th>ITEM NAME</th>
+                    <th>ITEM PRICE (€)</th>
+                    <th>PURCHASE DATE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in user_items %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script>
+        document.getElementById("add_button").onclick = function () {
+            var formContainer = document.getElementById("form_container");
+            formContainer.style.display = "block"; // Show the form
+        };
+        document.getElementById("view_button").onclick = function () {
+            // Smooth scroll animation to the new page
+            var newPage = document.getElementById("new_page");
+            newPage.style.display = "block";
+            newPage.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        document.addEventListener("DOMContentLoaded", function() {
+        // Get the logout button element
+        var logoutButton = document.querySelector(".logout_button button");
+
+        // Add click event listener to the logout button
+        logoutButton.addEventListener("click", function() {
+            // Redirect to the root route
+            window.location.href = "/";
+        });
+    });
+
+    </script>
+</body>
+</html>

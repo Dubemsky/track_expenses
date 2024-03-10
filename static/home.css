@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Change to column direction */
+    align-items: center; /* Center horizontally */
+    height: 100vh;
+}
+.logout_button {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+}
+
+.logout_button button {
+    padding: 10px 20px; /* Adjust padding as needed to increase button size */
+    font-size: 16px; /* Adjust font size as needed */
+    background-color: #007bff;   
+    color: white;
+    border: none;
+}
+.logout_button:hover {
+    background-color: transparent; /* Set hover background color to transparent */
+    color: #007bff; /* Change text color on hover */
+    border: 2px solid #007bff; /* Add border on hover */
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 20px; /* Add margin to the top */
+    margin-bottom: 10px; /* Reduce margin to bring closer to the container */
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh;
+}
+
+.button {
+    padding-bottom: 40px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 30px;
+    height: 80px;
+    width: 200px;
+}
+.button:hover {
+    background-color: transparent; /* Set hover background color to transparent */
+    color: #007bff; /* Change text color on hover */
+    border: 2px solid #007bff; /* Add border on hover */
+}
+#form_container {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    z-index: 9999; 
+}
+
+
+.form-wrapper {
+    background-color: #95a7ff; /* Black background color */
+    padding: 20px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #283ba7;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #f4f4f4;
+    color: black;
+}
+/* Define styles for the table */
+.styled-table {
+    width: 1200px; /* You can adjust this value to increase the width */
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Define styles for table header */
+.styled-table th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Define styles for table cells */
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Define alternate background color for even rows */
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.new-page {
+    height: 100vh;
+    background-color: #f8f8f8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.new-page h2 {
+    font-size: 32px;
+    color: #333; 
+}
